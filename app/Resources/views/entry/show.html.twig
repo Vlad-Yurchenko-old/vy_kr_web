@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Entry</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ entry.id }}</td>
+            </tr>
+            <tr>
+                <th>Text</th>
+                <td>{{ entry.text }}</td>
+            </tr>
+            <tr>
+                <th>Category</th>
+                <td>{{ entry.category }}</td>
+            </tr>
+            <tr>
+                <th>Time</th>
+                <td>{% if entry.time %}{{ entry.time|date('Y-m-d H:i:s') }}{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Workerid</th>
+                <td>{{ entry.workerId }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('entry_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('entry_edit', { 'id': entry.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

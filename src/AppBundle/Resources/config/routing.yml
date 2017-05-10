@@ -1,0 +1,13 @@
+app_entry:
+    resource: "@AppBundle/Resources/config/routing/entry.yml"
+    prefix:   /entry
+
+app_worker:
+    resource: "@AppBundle/Resources/config/routing/worker.yml"
+    prefix:   /worker
+
+app_homepage:
+    path:     /
+    defaults: { _controller: AppBundle:Default:index }
+    requirements:
+

@@ -1,0 +1,24 @@
+entry_index:
+    path:     /
+    defaults: { _controller: "AppBundle:Entry:index" }
+    methods:  GET
+
+entry_show:
+    path:     /{id}/show
+    defaults: { _controller: "AppBundle:Entry:show" }
+    methods:  GET
+
+entry_new:
+    path:     /new
+    defaults: { _controller: "AppBundle:Entry:new" }
+    methods:  [GET, POST]
+
+entry_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "AppBundle:Entry:edit" }
+    methods:  [GET, POST]
+
+entry_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "AppBundle:Entry:delete" }
+    methods:  DELETE
