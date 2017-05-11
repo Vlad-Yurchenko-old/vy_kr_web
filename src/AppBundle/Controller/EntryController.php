@@ -2,6 +2,7 @@
 
 namespace AppBundle\Controller;
 
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use AppBundle\Entity\Entry;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
@@ -15,6 +16,9 @@ class EntryController extends Controller
     /**
      * Lists all entry entities.
      *
+     */
+    /**
+     * @Route("/", name="entry_index")
      */
     public function indexAction()
     {
@@ -30,6 +34,9 @@ class EntryController extends Controller
     /**
      * Creates a new entry entity.
      *
+     */
+    /**
+     * @Route("/new", name="entry_new")
      */
     public function newAction(Request $request)
     {
@@ -55,6 +62,9 @@ class EntryController extends Controller
      * Finds and displays a entry entity.
      *
      */
+    /**
+     * @Route("/{id}/show", name="entry_show")
+     */
     public function showAction(Entry $entry)
     {
         $deleteForm = $this->createDeleteForm($entry);
@@ -68,6 +78,9 @@ class EntryController extends Controller
     /**
      * Displays a form to edit an existing entry entity.
      *
+     */
+    /**
+     * @Route("/{id}/edit", name="entry_edit")
      */
     public function editAction(Request $request, Entry $entry)
     {
@@ -91,6 +104,9 @@ class EntryController extends Controller
     /**
      * Deletes a entry entity.
      *
+     */
+    /**
+     * @Route("/{id}/delete", name="entry_delete")
      */
     public function deleteAction(Request $request, Entry $entry)
     {

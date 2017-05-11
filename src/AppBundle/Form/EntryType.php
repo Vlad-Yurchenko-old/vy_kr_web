@@ -3,8 +3,10 @@
 namespace AppBundle\Form;
 
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\DateTimeType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Validator\Constraints\DateTime;
 
 class EntryType extends AbstractType
 {
@@ -13,7 +15,7 @@ class EntryType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('text')->add('category')->add('time')->add('workerId')        ;
+        $builder->add('text')->add('category')->add('time',DateTimeType::class)->add('workerId');
     }
     
     /**
